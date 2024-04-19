@@ -9,6 +9,20 @@ C.  Customize the HTML user interface for your customer’s application. The use
 
 D.  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
 
+    Created new HTML file about.html:
+    Lines 5-11 - Copied meta tags and bootstrap CSS from existing html project files to keep user interface style consistent
+    Line 13 - Changed page title to "About Us"
+    Line 14 - Added header "About Tom's Gun Shop"
+    Line 15 - Added horizontal line to match style on mainscreen.html
+    Lines 16-19 Added a brief description of Tom's Gun Shop
+    Line 20 - Added link to return to main page
+    
+    Created new controller AboutController.java:
+    Lines 1-3 - Imported necessary packages to map requests to /about.html
+    Lines 5-11 - Created controller and getmapping to map to /about.html
+
+    In mainscreen.html:
+    Line 89 - Added link to about page
 
 E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
 
