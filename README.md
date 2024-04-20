@@ -108,3 +108,5 @@ I.  Add at least two unit tests for the maximum and minimum fields to the PartTe
     parts against values of 0 and 999
 
 J.  Remove the class files for any unused validators in order to clean your code.
+
+    Deleted DeletePartValidator.java
