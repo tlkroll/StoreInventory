@@ -36,6 +36,15 @@ F.  Add a “Buy Now” button to your product list. Your “Buy Now” button m
 •  The button should decrement the inventory of that product by one. It should not affect the inventory of any of the associated parts.
 •  Display a message that indicates the success or failure of a purchase.
 
+    Created templates buySuccess.html and buyFail.html which show success or failure of "Buy Now"
+    
+    In mainscreen.html:
+    Line 86 - Added line for "Buy Now" button
+
+    Created controller BuyNow.java: 
+    Line 87 - Buy Now button points to BuyNow controller 
+    Lines 88-105 - If inventory is 0, BuyNow redirects to buyFail.html. If inventory > 0, inventory for that product is 
+    decremented by one and BuyNow redirects to buySuccess.html
 
 G.  Modify the parts to track maximum and minimum inventory by doing the following:
 •  Add additional fields to the part entity for maximum and minimum inventory.
