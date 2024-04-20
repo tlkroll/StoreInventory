@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 /**
  * Project: demoDarbyFrameworks2-master
@@ -27,6 +28,24 @@ class PartTest {
         partIn=new InhousePart();
         partOut=new OutsourcedPart();
     }
+
+    @Test
+    void isValid() {
+        partIn.setMin(5);
+        partOut.setMin(5);
+        partIn.setInv(0);
+        assertFalse(partIn.isInvValid(partIn.getInv()));
+        partOut.setInv(0);
+        assertFalse(partOut.isInvValid(partOut.getInv()));
+
+        partIn.setMax(100);
+        partOut.setMax(100);
+        partIn.setInv(999);
+        assertFalse(partIn.isInvValid(partIn.getInv()));
+        partOut.setInv(999);
+        assertFalse(partOut.isInvValid(partOut.getInv()));
+    }
+
     @Test
     void getId() {
         Long idValue=4L;

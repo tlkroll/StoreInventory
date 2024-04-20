@@ -103,5 +103,8 @@ H.  Add validation for between or at the maximum and minimum fields. The validat
 
 I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
 
+    In PartTest.java:
+    Lines 31-46 - Added four unit tests to check operation of isInvValid method. Checks both Inhouse and Outsourced
+    parts against values of 0 and 999
 
 J.  Remove the class files for any unused validators in order to clean your code.
