@@ -39,6 +39,8 @@ public class BootStrapData implements CommandLineRunner {
             barrel.setInv(20);
             barrel.setPrice(700.0);
             barrel.setId(100L);
+            barrel.setMin(5);
+            barrel.setMax(30);
             outsourcedPartRepository.save(barrel);
 
             OutsourcedPart stock= new OutsourcedPart();
@@ -47,6 +49,8 @@ public class BootStrapData implements CommandLineRunner {
             stock.setInv(10);
             stock.setPrice(1000.0);
             stock.setId(200L);
+            stock.setMin(2);
+            stock.setMax(15);
             outsourcedPartRepository.save(stock);
 
             OutsourcedPart trigger= new OutsourcedPart();
@@ -55,6 +59,8 @@ public class BootStrapData implements CommandLineRunner {
             trigger.setInv(50);
             trigger.setPrice(150.0);
             trigger.setId(300L);
+            trigger.setMin(20);
+            trigger.setMax(100);
             outsourcedPartRepository.save(trigger);
 
             OutsourcedPart sight= new OutsourcedPart();
@@ -63,6 +69,8 @@ public class BootStrapData implements CommandLineRunner {
             sight.setInv(100);
             sight.setPrice(200.0);
             sight.setId(400L);
+            sight.setMin(50);
+            sight.setMax(150);
             outsourcedPartRepository.save(sight);
 
             OutsourcedPart scope= new OutsourcedPart();
@@ -71,6 +79,8 @@ public class BootStrapData implements CommandLineRunner {
             trigger.setInv(20);
             trigger.setPrice(1200.0);
             trigger.setId(500L);
+            trigger.setMin(10);
+            trigger.setMax(50);
             outsourcedPartRepository.save(trigger);
 
             OutsourcedPart thePart=null;

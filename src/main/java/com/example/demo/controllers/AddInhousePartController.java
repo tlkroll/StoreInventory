@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.swing.*;
 import javax.validation.Valid;
 
 /**
@@ -39,6 +40,11 @@ public class AddInhousePartController{
     @PostMapping("/showFormAddInPart")
     public String submitForm(@Valid @ModelAttribute("inhousepart") InhousePart part, BindingResult theBindingResult, Model theModel){
         theModel.addAttribute("inhousepart",part);
+
+        if (!part.isInvValid(part.getInv())) {
+            return "InhousePartForm";
+        }
+
         if(theBindingResult.hasErrors()){
             return "InhousePartForm";
         }

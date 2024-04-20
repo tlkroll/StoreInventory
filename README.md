@@ -53,6 +53,36 @@ G.  Modify the parts to track maximum and minimum inventory by doing the followi
 •  Rename the file the persistent storage is saved to.
 •  Modify the code to enforce that the inventory is between or at the minimum and maximum value.
 
+    In Part.java:
+    Lines 31-34 - Defined minInventory and maxInventory variables
+    Lines 44, 48, 49, 52, 57, 58 - Defined constructors for minInventory and maxInventory
+    Lines 95-107 - Defined setters and getters getMin, setMin, getMax, setMax for minInventory and maxInventory
+    
+    In BootStrapData.java:
+    Lines 42, 43, 52, 53, 62, 63, 72, 73, 82, 83 - Added minInventory and maxInventory values for sample parts
+    
+    In mainscreen.html:
+    Lines 38, 39, 49, 50 - Added table headers and data items for minInventory and maxInventory in Parts table
+    
+    In InHousePartForm.html:
+    Lines 25 & 26 - Added input fields for minimum and maximum inventory
+
+    In OutsourcedPartForm.html:
+    Lines 25 & 26 - Added input fields for minimum and maximum inventory
+
+    In application.properties after renaming database file:
+    Line 6 - spring.datasource.url=jdbc:h2:file:~/new-db-name
+
+    In Part.java:
+    Lines 60-67 - Added method to verify that inventory count falls between min and max values
+
+    In AddInhousePartController.java:
+    Lines 44-46 - Added conditional statement using inventory validation method created in previous step which
+    returns the form if inventory value is outside valid range
+    
+    In AddOutsourcedPartController.java:
+    Lines 44-46 - Added conditional statement using inventory validation method created in previous step which
+    returns the form if inventory value is outside valid range
 
 H.  Add validation for between or at the maximum and minimum fields. The validation must include the following:
 •  Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts.
