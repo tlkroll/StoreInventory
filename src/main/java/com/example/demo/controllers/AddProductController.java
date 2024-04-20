@@ -80,6 +80,9 @@ public class AddProductController {
                 if(product.getInv()- product2.getInv()>0) {
                     for (Part p : product2.getParts()) {
                         int inv = p.getInv();
+                        if ((inv -1) < p.getMin()) {
+                            return "minerror";
+                        }
                         p.setInv(inv - (product.getInv() - product2.getInv()));
                         partService1.save(p);
                     }

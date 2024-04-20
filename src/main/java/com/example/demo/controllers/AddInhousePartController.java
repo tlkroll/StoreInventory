@@ -42,7 +42,12 @@ public class AddInhousePartController{
         theModel.addAttribute("inhousepart",part);
 
         if (!part.isInvValid(part.getInv())) {
-            return "InhousePartForm";
+            if (part.getInv() < part.getMin()) {
+                return "minerror";
+            }
+            else {
+                return "maxerror";
+            }
         }
 
         if(theBindingResult.hasErrors()){

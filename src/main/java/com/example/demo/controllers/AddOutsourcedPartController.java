@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.swing.*;
 import javax.validation.Valid;
 
 /**
@@ -42,7 +43,12 @@ public class AddOutsourcedPartController {
         theModel.addAttribute("outsourcedpart",part);
 
         if (!part.isInvValid(part.getInv())) {
-            return "OutsourcedPartForm";
+            if (part.getInv() < part.getMin()) {
+                return "minerror";
+            }
+            else {
+                return "maxerror";
+            }
         }
 
         if(bindingResult.hasErrors()){
