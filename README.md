@@ -1,7 +1,7 @@
 <h1>Store Inventory</h1>
 
 <h2>Description</h2>
-This is a Spring application with an HTML front end and a Java back end which tracks parts inventory and customers for an online store.
+This is a Spring application with an HTML front end and a Java back end which tracks parts inventory and customers for a fictional online store.
 <br>
 
 
